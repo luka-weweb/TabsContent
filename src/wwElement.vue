@@ -10,7 +10,5 @@ export default {
 </script>
 
 <template>
-  <div v-if="this.content.name === this.activeTabProvided">
-    <wwLayout path="slot" />
-  </div>
+  <wwLayout v-if="this.content.name === this.activeTabProvided" path="slot" />
 </template>
