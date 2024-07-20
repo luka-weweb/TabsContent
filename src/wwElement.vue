@@ -1,27 +1,16 @@
 <script>
-import { computed } from "vue";
 export default {
-  data() {
-    return {
-      activeTab: "tab1",
-    };
-  },
-  provide() {
-    return {
-      activeTabProvided: computed(() => this.activeTab),
-      setActiveTab: this.setActiveTab,
-    };
-  },
-  methods: {
-    setActiveTab(tabId) {
-      this.activeTab = tabId;
+  inject: ["activeTabProvided"],
+  props: {
+    name: {
+      type: String,
     },
   },
 };
 </script>
 
 <template>
-  <div>
+  <div v-if="name === this.activeTabProvided">
     <slot></slot>
   </div>
 </template>
