@@ -2,15 +2,15 @@
 export default {
   inject: ["activeTabProvided"],
   props: {
-    name: {
-      type: String,
-    },
+    content: { type: Object, required: true },
+    wwFrontState: { type: Object, required: true },
+    wwEditorState: { type: Object, required: true },
   },
 };
 </script>
 
 <template>
-  <div v-if="name === this.activeTabProvided">
+  <div v-if="this.content.name === this.activeTabProvided">
     <slot></slot>
   </div>
 </template>
