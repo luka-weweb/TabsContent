@@ -11,6 +11,6 @@ export default {
 
 <template>
   <div v-if="this.content.name === this.activeTabProvided">
-    <slot></slot>
+    <wwLayout path="slot" />
   </div>
 </template>
